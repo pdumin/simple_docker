@@ -14,7 +14,14 @@ dp = Dispatcher(bot)
 
 @dp.message_handler(commands = ['api'])
 async def getapi(message: types.Message):
-    ans = requests.get('http://172.17.0.2/home')
+    ans = requests.get('http://172.19.0.45/home')
+    # print(ans)
+    await message.answer(ans.text)
+
+@dp.message_handler(commands = ['hello'])
+async def get_hello(message: types.Message):
+    ans = requests.get('http://172.19.0.45/')
+    # print(ans)
     await message.answer(ans.text)
 
 if __name__ == '__main__':
