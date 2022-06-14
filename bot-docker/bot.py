@@ -1,8 +1,17 @@
 import logging
 import requests
-from tok import tok
+import os
+from config.tok import tok
+
+print(tok)
+
 
 from aiogram import Bot, Dispatcher, executor, types
+
+
+
+# API_TOKEN = tok
+# API_TOKEN = os.environ['TOKEN']
 
 API_TOKEN = tok
 
@@ -26,3 +35,4 @@ async def get_hello(message: types.Message):
 
 if __name__ == '__main__':
     executor.start_polling(dp, skip_updates=True)
+    print(tok)
